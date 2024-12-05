@@ -17,7 +17,7 @@ clean-build:
 clean: clean-pyc clean-build
 
 build: clean
-	docker build -t $(PACKAGE_NAME) -f Dockerfile --build-arg module_folder=$(PROJECT_FOLDER) --build-arg package_name=$(PACKAGE_NAME) $(GIT_DIR)
+	docker build -t $(PACKAGE_NAME) -f Dockerfile.dev --build-arg module_folder=$(PROJECT_FOLDER) --build-arg package_name=$(PACKAGE_NAME) $(GIT_DIR)
 
 shell: clean
 	docker run -it --rm \
